@@ -9,6 +9,8 @@ import {COURSES} from '../db-data';
 })
 export class AppComponent {
 
-
+    course0 = COURSES[0];
+    course1 = COURSES[1];
+    course2 = COURSES[2];
 
 }
