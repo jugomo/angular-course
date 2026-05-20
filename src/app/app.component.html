@@ -7,9 +7,9 @@
 
 <div class="courses">
 
-    <course-card [course]="course0"></course-card>
-    <course-card [course]="course1"></course-card>
-    <course-card [course]="course2"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [course]="course0"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [course]="course1"></course-card>
+    <course-card (courseSelected)="onCourseSelected($event)" [course]="course2"></course-card>
 
 </div>
 
