@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { COURSES } from '../../db-data';
 import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -26,5 +27,15 @@ export class CourseCardComponent implements OnInit {
   onCourseViewed(){
     console.log("Course viewed: " + this.course.description);
     this.courseEmitter.emit(this.course);
+  }
+
+  cardClasses() {
+    if(this.course.category == 'BEGINNER') {
+        return 'beginner';
+    }
+    
+    // return {
+    //   'beginner': this.course.category == 'BEGINNER',
+    // };
   }
 }
