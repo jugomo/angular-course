@@ -9,10 +9,7 @@ import { Course } from './model/course';
     standalone: false
 })
 export class AppComponent {
-
-    course0 = COURSES[0];
-    course1 = COURSES[1];
-    course2 = COURSES[2];
+    courses = COURSES;
 
     onCourseSelected(course: Course) {
         console.log("Card clicked", course);
