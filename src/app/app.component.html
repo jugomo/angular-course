@@ -5,8 +5,31 @@
 
 </div>
 
+<div class="demo">
+    <div>Start Date: {{startDate | date: 'd · MMM · yyyy'}}</div>
+    <div>Title: {{title | uppercase}}</div>
+    <div>Number: {{price | number: '3.4-5'}}</div>
+    <div>Currency: {{price | currency:'GBP'}}</div>
+    <div>Percentage: {{rate | percent}}</div>
+</div>
+
+<hr/>
+
+<!-- for debugging -->
+{{courses | json}}
+
+<hr/>
+
+<div>
+    @for (pair of course | keyvalue; track course.id) {
+        {{pair.key + ':' + pair.value + '\n'}}
+    }
+</div>
+
+<hr/>
+
 <div class="courses">
-    @for (course of courses; track course.id; 
+    @for (course of courses | slice:0:4 ; track course.id; 
             let index = $index; let count = $count; 
             let first = $first; let last = $last;
             let even = $even; let odd = $odd) 
