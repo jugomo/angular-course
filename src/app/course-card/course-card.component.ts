@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { COURSES } from '../../db-data';
 import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
-  imports: [NgClass],
+  imports: [NgClass, NgStyle],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -37,5 +37,17 @@ export class CourseCardComponent implements OnInit {
     // return {
     //   'beginner': this.course.category == 'BEGINNER',
     // };
+  }
+
+  titleStyles() {
+    return {
+      'text-decoration':'underline'
+    };
+  }
+
+  cardStyles() {
+    return {
+      'background-image' : 'url(' + this.course.iconUrl + ')',
+    };
   }
 }
